@@ -14,6 +14,8 @@ function verificar() {
 
     if (fsex[0].checked) {
       genero = 'Homem'
+    document.body.style.background = 'cornflowerblue'
+
       if (idade >= 0 && idade < 10) {
         img.setAttribute('src', 'm.bebe.png')
       } else if (idade < 25) {
@@ -25,6 +27,8 @@ function verificar() {
       }
     } else if (fsex[1].checked) {
       genero = "Mulher";
+    document.body.style.background = 'pink'
+
       if (idade >= 0 && idade < 10) {
         img.setAttribute("src", "bebe.png");
       } else if (idade < 25) {
@@ -34,6 +38,7 @@ function verificar() {
       } else {
         img.setAttribute("src", "idosa.png");
       }
+
     }
     res.style.textAlign = "center";
     res.innerHTML = `Detectamos ${genero} com ${idade} anos.`;
