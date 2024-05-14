@@ -11,10 +11,12 @@ function isNumero(n) {
     return  false
   }
 }
-function inLista(n, ){
-  if (1.indexOf(Number(n)) != -1) {
+
+function inLista(n, l) {
+  if (l.indexOf(Number(n)) != -1) {
     return true
-  } else {
+  } else { 
+    return false 
 
   }
 }
@@ -22,10 +24,24 @@ function inLista(n, ){
 
 function adicionar(){
   if(isNumero(num.value) && !inLista(num.value, valores)){
-    window.alert('tudo ok')
+valores.push(Number(num.value))
+let item = document.createElement('option')
+item.text = `Valor ${num.value} adicionado.`
+inLista.appendChild(item)
 
   }else{
     window.alert('valor invalido ou ja encontrado na lista.')
   }
+  num.value = ''
+  num.focus()
+}
 
+function finalizar( ) {
+  if (valores.length == 0) { 
+    window.alert('Adicionar valores antes de finalizar')
+  } else{ let tot = valores.length
+    res.innerHTML =''
+    res.innerHTML += '<p> ao todo, te,os ${}'
+
+  }
 }
